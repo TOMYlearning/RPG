@@ -4,7 +4,7 @@ public class Brave extends Human {
 	public Brave() {
 		name = "勇者";
 		hp = 1000;
-		offensive =10;
+		offensive =1000;
 	}
 	
 	public Brave(String name,int hp,int offensive) {
