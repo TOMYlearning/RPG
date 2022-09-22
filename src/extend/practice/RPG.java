@@ -32,7 +32,7 @@ public class RPG {
 		Random r = new Random();
 		int w;
 		//実行処理↓
-		for(int count = 0; count < 100; count++) {
+		for(int count = 0; count < 1000|| humanList.isEmpty() || monsterList.isEmpty(); count++) {
 			
 			System.out.println("人間のターン");
 			
