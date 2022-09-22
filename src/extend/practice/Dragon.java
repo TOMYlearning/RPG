@@ -4,7 +4,7 @@ public class Dragon extends Monster {
 	public Dragon() {
 		name = "ドラゴン";
 		hp = 10000;
-		offensive =10;
+		offensive =100;
 	}
 	
 	public Dragon(String name,int hp,int offensive) {
@@ -14,8 +14,7 @@ public class Dragon extends Monster {
 	}
 	@Override
 	public void attack(Living target) {
-		System.out.println(this.name +"の攻撃！");
-		System.out.println(this.offensive +"のダメージ！");
+		System.out.print(this.name +"の攻撃！");
 	}
 
 }

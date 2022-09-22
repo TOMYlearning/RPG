@@ -4,7 +4,7 @@ public class Wizard extends Human {
 	public Wizard() {
 		name = "魔法使い";
 		hp = 1000;
-		offensive =10;
+		offensive =20;
 	}
 	
 	public Wizard(String name,int hp,int offensive) {
@@ -14,8 +14,6 @@ public class Wizard extends Human {
 	}
 	@Override
 	public void attack(Living target) {
-		System.out.println(this.name +"が魔法で攻撃！");
-		System.out.println(this.offensive +"のダメージ！");
+		System.out.print(this.name +"が魔法で攻撃！");
 	}
-	
 }

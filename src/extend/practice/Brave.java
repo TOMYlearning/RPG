@@ -16,7 +16,6 @@ public class Brave extends Human {
 	
 	@Override
 	public void attack(Living target) {
-		System.out.println(this.name +"が剣で攻撃！");
-		System.out.println(this.offensive +"のダメージ！");
+		System.out.print(this.name +"が剣で攻撃！");
 	}
 }

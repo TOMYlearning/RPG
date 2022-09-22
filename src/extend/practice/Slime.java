@@ -14,8 +14,7 @@ public class Slime extends Monster {
 	}
 	@Override
 	public void attack(Living target) {
-		System.out.println(this.name +"の攻撃！");
-		System.out.println(this.offensive +"のダメージ！");
+		System.out.print(this.name +"の攻撃！");
 	}
 
 }

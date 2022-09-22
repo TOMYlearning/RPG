@@ -4,7 +4,7 @@ public class Ork extends Monster {
 	public Ork() {
 		name = "オーク";
 		hp = 1000;
-		offensive =10;
+		offensive =40;
 	}
 	
 	public Ork(String name,int hp,int offensive) {
@@ -14,9 +14,6 @@ public class Ork extends Monster {
 	}
 	@Override
 	public void attack(Living target) {
-		System.out.println(this.name +"の攻撃！");
-		System.out.println(this.name +"のダメージ！");
+		System.out.print(this.name +"の攻撃！");
 	}
-
-
 }
