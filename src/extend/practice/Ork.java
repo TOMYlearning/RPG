@@ -1,6 +1,7 @@
 package extend.practice;
 
 public class Ork extends Monster {
+	public String weapon = "こん棒";
 	public Ork() {
 		name = "オーク";
 		hp = 1000;
@@ -14,6 +15,8 @@ public class Ork extends Monster {
 	}
 	@Override
 	public void attack(Living target) {
-		System.out.print(this.name +"の攻撃！");
+		System.out.print(this.name +"が"+this.weapon+"で攻撃！");
+		target.hp  -= Rand.get()*this.offensive; 
+		System.out.println(target.name + "に" + Rand.get()*this.offensive + "のダメージを与えた！");
 	}
 }

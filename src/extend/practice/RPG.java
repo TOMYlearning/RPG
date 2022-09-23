@@ -30,56 +30,51 @@ public class RPG {
 		
 		//ランダム変数
 		Random r = new Random();
-		int w;
+		int w,hcount,mcount;
 		//実行処理↓
-		for(int count = 0; count < 1000|| humanList.isEmpty() || monsterList.isEmpty(); count++) {
-			
+		while (true){
 			System.out.println("人間のターン");
-			
+			hcount = humanList.size();
+			mcount = monsterList.size();
+
 			//ランダムターゲット
-			Human humanAtk = humanList.get(r.nextInt(1));
-			Monster monsterDef = monsterList.get(r.nextInt(1));
-			w = r.nextInt(10);
+			Human humanAtk = humanList.get(r.nextInt(hcount));
+			Monster monsterDef = monsterList.get(r.nextInt(mcount));
+			
 			//攻撃フェーズ
 			humanAtk.attack(monsterDef);
-			monsterDef.hp  -= w*humanAtk.offensive; 
-			System.out.println(monsterDef.name + "に" + w*humanAtk.offensive + "のダメージを与えた！");
 			
 			//ダメージ判定
-			while(monsterDef.hp <= 0) {
+			if(monsterDef.hp <= 0) {
 				monsterList.remove(monsterDef);
 				System.out.println(monsterDef.name + "は倒れた。");
-				break;
 			}
 			System.out.println();
-			while(monsterList.isEmpty()) {
+			if(monsterList.isEmpty()) {
 				System.out.println("人間の勝利");
 				System.exit(0);
 			}
 			
 			System.out.println("モンスターのターン");
+			hcount = humanList.size();
+			mcount = monsterList.size();
 			
 			//ランダムターゲット
-			Monster monsterAtk = monsterList.get(r.nextInt(1));
-			Human humanDef = humanList.get(r.nextInt(1));
-			w = r.nextInt(10);
+			Monster monsterAtk = monsterList.get(r.nextInt(mcount));
+			Human humanDef = humanList.get(r.nextInt(hcount));
 			
+			//攻撃フェーズ
 			monsterAtk.attack(humanDef);
-			humanDef.hp  -= w*monsterAtk.offensive; 
-			System.out.println(humanDef.name + "に" + w*monsterAtk.offensive + "のダメージを与えた！");
-			
 			//ダメージ判定
-			while(humanDef.hp <= 0) {
+			if(humanDef.hp <= 0) {
 				humanList.remove(humanDef);
 				System.out.println(humanDef.name + "は倒れた。");
-				break;
 			}
 			System.out.println();
-			while(humanList.isEmpty()) {
+			if(humanList.isEmpty()) {
 				System.out.println("モンスターの勝利");
 				System.exit(0);	
 			}
-			
 		}
 	}
 }
